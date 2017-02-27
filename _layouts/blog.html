@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>{{ page.title }} | Dummy Blog</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <link href="{{ "/bootstrap3/css/bootstrap.min.css" | absolute_url }}" rel="stylesheet"/>
+    <link href="{{ "/assets/css/gsdk.css" | absolute_url }}" rel="stylesheet"/>
+    <link href="{{ "/assets/css/examples.css" | absolute_url }}" rel="stylesheet"/>
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+</head>
+
+<body class="blog-post">
+
+{% include navbar.html %}
+
+<div class="wrapper">
+    <div class="parallax">
+        <div class="parallax-image">
+            <img src="{{ page.image_url | absolute_url }}" alt="..." />
+        </div>
+    </div>
+
+     <div class="section">
+           <div class="container">
+               <div class="row">
+                  <div class="col-md-8 bottom-border">
+                    <h1 class="title title-blog">{{ page.title }}</h1>
+
+                    {{ content }}
+                           
+                </div>
+
+                
+
+                <!-- share section -->
+                <div class="col-md-3 col-md-offset-1">
+                  <div class="social-buttons">
+                      <a href="#" class="btn btn-social btn-round btn-fill btn-facebook">
+                          <i class="fa fa-facebook"></i>
+                      </a>
+                      <a href="#"  class="btn btn-social btn-round btn-fill btn-twitter">
+                          <i class="fa fa-twitter"></i>
+                      </a>
+                  </div>
+
+
+                  <!-- tags -->
+                  <!-- <h3 class="title title-blog">Tags </h3>
+                  <span class="label label-warning label-fill">Food</span>
+                  <span class="label label-warning label-fill">Health</span>
+                  <span class="label label-warning label-fill">Lifestyle</span>
+                  <span class="label label-warning label-fill">Breakfast</span> -->
+
+                  
+                  </div>
+
+
+                </div>
+            </div>
+          </div>
+    </div>
+
+
+
+    {% include footer.html %}
+
+
+
+
+</div> <!-- wrapper -->
+</body>
+  <!--  jQuery and Bootstrap core files    -->
+  <script src="{{ "/assets/js/jquery.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/jquery-ui.custom.min.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/bootstrap3/js/bootstrap.min.js" | absolute_url }}" type="text/javascript"></script>
+
+
+	<!--  Plugins -->
+  <script src="{{ "/assets/js/gsdk-checkbox.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/gsdk-morphing.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/gsdk-radio.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/gsdk-bootstrapswitch.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/bootstrap-select.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/bootstrap-datepicker.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/chartist.min.js" | absolute_url }}" type="text/javascript"></script>
+  <script src="{{ "/assets/js/jquery.tagsinput.js" | absolute_url }}" type="text/javascript"></script>
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <!--  Get Shit Done Kit PRO Core javascript 	 -->
+    <script src="{{ "/assets/js/get-shit-done.js" | absolute_url }}" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        var big_image;
+        $().ready(function(){
+            responsive = $(window).width();
+
+            if (responsive >= 768){
+                big_image = $('.parallax-image').find('img');
+
+                $(window).on('scroll',function(){
+                    parallax();
+                });
+            }
+
+        });
+
+       var parallax = function() {
+            var current_scroll = $(this).scrollTop();
+
+            oVal = ($(window).scrollTop() / 3);
+            big_image.css('top',oVal);
+        };
+
+    </script>
+
+    <!-- If you are using TypeKit.com uncomment this code otherwise you can delete it -->
+    <!--
+    <script src="https://use.typekit.net/[your kit code here].js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    -->
+
+    <!-- If you have retina @2x images on your server which can be sent to iPhone/iPad/MacRetina, please uncomment the next line, otherwise you can delete it -->
+	<!-- <script src="assets/js/retina.min.js"></script> -->
+
+</html>
